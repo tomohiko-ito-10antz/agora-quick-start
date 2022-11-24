@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  token-server:
+    build: "./token-server"
+    working_dir: "/work/"
+    tty: true
+    volumes:
+      - "./token-server/:/work/:delegated"
+    ports:
+      - "8080:8080"
+
+  video-calling:
+    build: "./video-calling"
+    working_dir: "/work/"
+    tty: true
+    volumes:
+      - "./video-calling/:/work/:delegated"
+    ports:
+      - "8081:8080"
